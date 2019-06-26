@@ -12,11 +12,11 @@ mkdir {Hex,Name,Solid}
 cat Colors | while read line
 do      
         typeset -u hex
-        hex=`echo $line|cut -d"," -f2`
-        name=`echo $line|cut -d"," -f1`
+        hex=`echo $line|cut -d"," -f1`
+        name=`echo $line|cut -d"," -f2`
         lname=`LANG=zh_CN.utf-8;echo "$name"|wc -L`
         echo "|$name| : $lname"
-        pinyin=`echo $line|cut -d"," -f2`
+        pinyin=`echo $line|cut -d"," -f3`
         file=$pinyin".png"
         echo "|$file|"
         hexT=${hex:0:7}
